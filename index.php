@@ -10,10 +10,23 @@
     }
     $view = "view/no-connect/" . $_GET["page"] . ".php";
   }
+  
   if($_POST){
-    require "controller/loginController.php";
-    $controllerLogin = new LoginController();
-    $view = $controllerLogin->login($_POST);
+    if (isset($_POST['page'])){
+      switch ($_POST['page']) {
+        case 'login':
+          require "controller/loginController.php";
+          $controllerLogin = new LoginController();
+          $view = $controllerLogin->login($_POST);
+        break;
+
+        case 'register':
+          require "controller/registerController.php";
+          $controllerRegister = new RegisterController();
+          $view = $controllerRegister->register($_POST);
+        break;
+      }
+    }
   }
   require $view;
  ?>

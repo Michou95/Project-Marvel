@@ -1,6 +1,7 @@
 <?php
+require_once "controller.php";
 
-class LoginController{
+class LoginController extends Controller{
 
   public function login(array $user): ?string{ //Typage donnée en sortie (Null ou string)
 
@@ -23,10 +24,6 @@ class LoginController{
     else{
       return "view/no-connect/login.php";
     }
-  }
-
-  public function validateEmail(string $email): bool{
-    return(filter_var($email, FILTER_VALIDATE_EMAIL)) ? true : false;
   }
 }
 

@@ -1,6 +1,10 @@
 <?php
 // Definition des constantes
 define("HOSTURL", "http://localhost/php/php_OBJ/mvc/");
+define("BDDHOST", "localhost");
+define("BDDUSER", "root");
+define("BDDPASS", "");
+define("BDDDATABASE", "marvel_dc");
 
 CONST HOSTURLASSET = HOSTURL . "asset/";
 
